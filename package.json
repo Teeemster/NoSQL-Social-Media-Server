@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "mongoose": "^6.1.7"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "challenge18",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
