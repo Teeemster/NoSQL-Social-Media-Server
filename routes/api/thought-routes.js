@@ -20,4 +20,11 @@ router
     .put(updateOneThought)
     .delete(deleteAThought);
 
+
+router
+    .route('/:thoughtId/reactions')
+    .post(createAReaction)
+    .delete(deleteAReaction)
+
+
 module.exports = router;
