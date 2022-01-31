@@ -4,7 +4,9 @@ const {
     getOneThought,
     createAThought,
     updateOneThought,
-    deleteAThought
+    deleteAThought,
+    createAReaction,
+    deleteAReaction
 } = require('../../controllers/thought-controller');
 
 // /api/thoughts
