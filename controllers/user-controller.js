@@ -1,4 +1,7 @@
+//Import User Model
 const { User } = require('../models');
+
+//Controller Section
 
 const userController = {
     //Get All Users
@@ -98,7 +101,7 @@ const userController = {
             })
     },
 
-    //Delete a User
+    //Delete A User
     deleteUser({ params }, res) {
         User.findOneAndDelete({ _id: params.id })
             .then(dbUserData => res.json(dbUserData))
@@ -106,4 +109,5 @@ const userController = {
     }
 }
 
+//Export The Controller
 module.exports = userController;

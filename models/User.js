@@ -1,6 +1,8 @@
+//Require Mongoose and Date Getter
 const { Schema, model } = require("mongoose");
 const Thought = require('./Thought')
 
+//User Schema Setup
 const UserSchema = new Schema(
     {
         username: {
@@ -36,10 +38,11 @@ const UserSchema = new Schema(
     }
 )
 
-//Create a virtual that retrieves the length of the user's friends array field on query
+//Virtual that retrieves length of user's friends array field on query
 UserSchema.virtual('friendsCount').get(function () {
     return this.friends.length
 })
 
+//Exports Model / Schema
 const User = model('User', UserSchema);
 module.exports = User;

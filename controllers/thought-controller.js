@@ -1,4 +1,7 @@
+//Import the models
 const { Thought, User } = require('../models');
+
+//Controller Section
 
 const thoughtController = {
     //Get All Thoughts
@@ -31,7 +34,7 @@ const thoughtController = {
             });
     },
 
-    //Create a Thought
+    //Create A Thought
     createAThought(req, res) {
         Thought.create(req.body)
             .then(dbThoughtData => {
@@ -98,7 +101,7 @@ const thoughtController = {
     deleteAReaction(req, res) {
         Thought.findByIdAndUpdate(
             req.params.thoughtId,
-            { $pull: { reactions: req.params.reactionId } },
+            { $pull: { reactions: { reactionId: req.body.reactionId } } },
             { runValidators: true, new: true }
         )
             .then(dbThoughtData => {
@@ -114,4 +117,5 @@ const thoughtController = {
     }
 }
 
+//Export The Controller
 module.exports = thoughtController;

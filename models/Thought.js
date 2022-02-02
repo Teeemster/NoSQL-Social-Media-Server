@@ -1,6 +1,8 @@
+//Require Mongoose and Date Getter
 const { Schema, model, Types } = require("mongoose");
 const dateFormat = require('../utils/dateFormat')
 
+//Reaction Schema Setup
 const ReactionSchema = new Schema(
     {
         reactionId: {
@@ -30,6 +32,7 @@ const ReactionSchema = new Schema(
     }
 )
 
+//Thought Schema Setup
 const ThoughtSchema = new Schema(
     {
         thoughtText: {
@@ -61,11 +64,11 @@ const ThoughtSchema = new Schema(
 );
 
 
-//Create a virtual that retrieves the length of the thought's reactions array field on query
+//Virtual that retrieves length of the thought reactions array field on query
 ThoughtSchema.virtual('reactionsCount').get(function () {
     return this.reactions.length
 })
 
-
+//Exports Thought Model / Schema
 const Thought = model('Thought', ThoughtSchema);
 module.exports = Thought;

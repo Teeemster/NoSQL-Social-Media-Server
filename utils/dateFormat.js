@@ -1,3 +1,4 @@
+//Lesson Date Formatting Tool
 const addDateSuffix = date => {
     let dateStr = date.toString();
 

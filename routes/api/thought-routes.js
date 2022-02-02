@@ -1,4 +1,7 @@
+//Require Express
 const router = require('express').Router();
+
+//Pull In All Controller Routes
 const {
     getThoughts,
     getOneThought,
@@ -22,11 +25,11 @@ router
     .put(updateOneThought)
     .delete(deleteAThought);
 
-
+// /api/thoughts/:thoughtId/reactions
 router
     .route('/:thoughtId/reactions')
     .post(createAReaction)
     .delete(deleteAReaction)
 
-
+//Export Router
 module.exports = router;
